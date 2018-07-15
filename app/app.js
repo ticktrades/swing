@@ -1,7 +1,7 @@
 const binance = require('binance-api-node').default();
 const broadcast = require('./bot');
 
-const { DEBUG, INTERVAL, THERESOLD, BASE_SYMBOL } = process.env;
+const { DEBUG, INTERVAL, THRESHOLD, BASE_SYMBOL } = process.env;
 
 
 async function publishTopic(data){
@@ -89,9 +89,9 @@ async function handleStream(tick) {
 	if(newRate.close > currentRate.pumpLow){
 		const difference = newRate.close - currentRate.pumpLow;
 		const differencePercent = (difference / currentRate.pumpLow) * 100;
-		const isChangeBeyondThresold = differencePercent >= THERESOLD;
+		const isChangeBeyondThreshold = differencePercent >= THRESHOLD;
 		
-		if(isChangeBeyondThresold){
+		if(isChangeBeyondThreshold){
 			const message = {symbol, currentRate, newRate, difference, differencePercent, trend: 'bull'};
       console.log(message);
 			return publishTopic(message).then(() => {
@@ -103,9 +103,9 @@ async function handleStream(tick) {
 	if( newRate.close < currentRate.pumpHigh){
 		const difference = newRate.close - currentRate.pumpHigh;
 		const differencePercent = (difference / currentRate.pumpHigh) * 100;
-		const isChangeBeyondThresold = differencePercent <= -(THERESOLD);
+		const isChangeBeyondThreshold = differencePercent <= -(THRESHOLD);
 		
-		if(isChangeBeyondThresold){
+		if(isChangeBeyondThreshold){
 			const message = {symbol, currentRate, newRate, difference, differencePercent, trend: 'bear'};
       console.log(message);
 			return publishTopic(message).then(() => {
