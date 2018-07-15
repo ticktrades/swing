@@ -10,10 +10,12 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "binance-api-node": "^0.8.2",
+    "slimbot": "^0.7.16"
   },
   "engines": {
-    "node": "8.x"
+    "node": "10.0.0"
   },
   "repository": {
     "url": "https://glitch.com/edit/#!/hello-express"
@@ -22,6 +24,6 @@
   "keywords": [
     "node",
     "glitch",
-    "express"
+    "binance"
   ]
 }
