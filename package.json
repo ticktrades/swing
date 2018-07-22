@@ -10,9 +10,9 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.16.3",
     "binance-api-node": "^0.8.2",
-    "slimbot": "^0.7.16"
+    "express": "^4.16.3",
+    "slimbot": "0.7.9"
   },
   "engines": {
     "node": "^8.0.0"
