@@ -76,5 +76,5 @@ typings/
 # Serverless directories
 .serverless
 
-
+build.sh
 # End of https://www.gitignore.io/api/node
