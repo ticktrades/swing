@@ -1,9 +1,10 @@
 {
+	"version": 1,
 	"env": {
-		"INTERVAL": "@INTERVAL",
-		"THRESHOLD": "@THRESHOLD",
-		"BASE_SYMBOL": "@BASE_SYMBOL",
-		"TELEGRAM_BOT_TOKEN": "@TELEGRAM_BOT_TOKEN",
-		"TELEGRAM_CHAT_ID": "@TELEGRAM_CHAT_ID"
+		"INTERVAL": "@interval",
+		"THRESHOLD": "@threshold",
+		"BASE_SYMBOL": "@base_symbol",
+		"TELEGRAM_BOT_TOKEN": "@telegram_bot_token",
+		"TELEGRAM_CHAT_ID": "@telegram_chat_id"
 	}
-  }
+}
